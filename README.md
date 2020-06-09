@@ -1,5 +1,24 @@
 ## Test task for the Russian credit bureau
 
+### Installation
+
+Create a database for the project and specify access in config/db.php
+
+Run migrations:
+```
+./yii migrate
+```
+
+Seed the database with fake data:
+```
+./yii seed-db
+```
+
+Start a built-in web server
+```
+./yii serve
+```
+
 ### 1. Get IDs of payments without credits
 
 Run the command from terminal
