@@ -2,7 +2,7 @@
 
 ### Installation
 
-Create a database for the project and specify access in config/db.php
+Create a database for the project (UTF-8) and specify access in config/db.php
 
 Run migrations:
 ```
@@ -32,3 +32,7 @@ Results will be stored in the /runtime/payments_without_credits.txt file.
 ```
 ./yii export-credits/export-credits-with-overdue
 ```
+
+### 2. Bookstore
+
+Open http://localhost:8080/ in browser

@@ -54,4 +54,12 @@ class Author extends ActiveRecord
     {
         return $this->hasMany(Book::class, ['author_id' => 'id']);
     }
+
+    /**
+     * @return int
+     */
+    public function getBooksCount()
+    {
+        return $this->hasMany(Book::class, ['author_id' => 'id'])->count();
+    }
 }

@@ -14,7 +14,7 @@ class SeedDbController extends Controller
      */
     public function actionIndex()
     {
-        $faker = Factory::create();
+        $faker = Factory::create('ru_RU');
 
         for ($a = 0; $a < 10; $a++) {
             $author = new Author();
