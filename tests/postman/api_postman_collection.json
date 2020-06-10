@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "72dd640c-88d8-4a27-90c4-0a3392af0462",
+		"name": "Equifax",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Books list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/books/list",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/books/by-id/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"by-id",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a book",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "Война и мир",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "99",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/books/update/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"update",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a book",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/books/delete/12",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"delete",
+						"12"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

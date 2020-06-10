@@ -10,12 +10,15 @@ $config = [
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
     ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'Py0k0XKknH0NL5i3vx7_ffkhasegiaT_',
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ]
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -48,7 +51,23 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                [
+                    'prefix' => 'api',
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => ['v1/books'],
+                    'extraPatterns' => [
+                        'GET list' => 'list',
+                        'GET by-id/{id}' => 'by-id',
+                        'PUT update/{id}' => 'update',
+                        'DELETE delete/{id}' => 'delete',
+                    ],
+                ],
             ],
+        ],
+    ],
+    'modules' => [
+        'v1' => [
+            'class' => 'app\modules\v1\ApiModule',
         ],
     ],
     'params' => $params,

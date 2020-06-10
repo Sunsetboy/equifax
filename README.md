@@ -36,3 +36,27 @@ Results will be stored in the /runtime/payments_without_credits.txt file.
 ### 2. Bookstore
 
 Open http://localhost:8080/ in browser
+
+### Bookstore API
+
+Tip: you can use attached file tests/postman/api_postman_collection.json with routes collection for Postman.
+
+Get a list of books with authors
+```
+GET /api/v1/books/list
+```
+
+Get a book with id=5
+```
+GET /api/v1/books/by-id/5
+```
+
+Update a book with id=5
+```
+PUT /api/v1/books/update/5
+```
+
+Delete a book with id=12
+```
+DELETE /api/v1/books/delete/12
+```
