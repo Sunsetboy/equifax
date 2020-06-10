@@ -45,6 +45,21 @@ class AuthorController extends Controller
     }
 
     /**
+     * Manage authors
+     * @return mixed
+     */
+    public function actionManage()
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => Author::find(),
+        ]);
+
+        return $this->render('manage', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    /**
      * Displays a single Author model.
      * @param integer $id
      * @return mixed

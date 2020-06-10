@@ -2,7 +2,6 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -15,7 +14,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Manage authors', ['manage'], ['class' => 'btn btn-success']) ?>
         <?= Html::a('Create Author', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
@@ -23,13 +21,13 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
-            [
-                'attribute' => 'name',
-                'content' => function ($model, $key, $index, $column) {
-                    return Html::a(Html::encode($model->name), Url::to(['author/view', 'id' => $model->id]));
-                }
-            ],
+            ['class' => 'yii\grid\SerialColumn'],
+
+            'id',
+            'name',
             'booksCount',
+
+            ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 

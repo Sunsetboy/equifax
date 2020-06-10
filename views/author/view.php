@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
@@ -26,12 +27,16 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </p>
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'id',
-            'name',
-        ],
-    ]) ?>
+    <?php if (sizeof($model->books) > 0): ?>
+        <h2>Books</h2>
+        <ul>
+            <?php foreach ($model->books as $book): ?>
+                <li><?php echo Html::a(Html::encode($book->title), Url::to(['book/view', 'id' => $book->id])); ?></li>
+            <?php endforeach; ?>
+        </ul>
+
+    <?php else: ?>
+        <p>We don't have information about books of this author</p>
+    <?php endif; ?>
 
 </div>
